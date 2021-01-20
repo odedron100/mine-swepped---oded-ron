@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap" rel="stylesheet">
+  <title>Mine-swepper</title>
+</head>
+<body onload="init()">
+  <h1>Mine swepper</h1>
+  <div class="mode" onClick="restart(this)">😊</div>
+  <div class="lives">
+    <span class="firstLife life" onClick="lifeSafe(this)">❤️</span>
+    <span class="firstLife arrow1">👇</span>
+    <span class="secondLife life" onClick="lifeSafe(this)">❤️</span>
+    <span class="secondLife arrow2">👇</span>
+    <span class="threeLife life" onClick="lifeSafe(this)">❤️</span>
+    <span  class="threeLife arrow3">👇</span>
+  </div>
+  <button class="beginner-level levels" onClick="levelClicked(this)" >BEGINNER <span>👶</span></button>
+  <button class="medium-level levels" onClick="levelClicked(this)">MEDIUM <span>👦</span></button>
+  <button class="expert-level levels" onClick="levelClicked(this)">EXPERT <span>🧔</span></button>
+  <div class="msg"></div>
+    <table>
+      <tbody class="game-board">
+
+      </tbody>
+    </table>
+
+    <script src="js/utils.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
