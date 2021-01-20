@@ -1,0 +1,170 @@
+body{
+  box-sizing: border-box;
+  background-color: black;
+}
+
+table{
+  text-align: center;
+  margin:80px auto;
+  border-spacing: 7px;
+}
+
+h1{
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 40px;
+}
+
+.mode{
+  cursor: pointer;
+  font-size: 80px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  transition: transform 0.3s;
+}
+
+.mode:hover{
+  transform: scale(1.2);
+}
+
+.cell {
+  cursor: pointer;
+  background-color: lightgrey;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  transition: transform 0.3s;
+}
+.cell:hover{
+  background-color: rgb(201, 208, 211);
+  border: 1px solid rgb(99, 108, 131);
+  transform: scale(1.1);
+}
+
+.lives{
+  padding: 3px;
+  position: absolute;
+  right:110px;
+  top:300px;
+  font-size: 30px;
+}
+
+.lives .life{
+  cursor: pointer;
+  margin-left: 1px;
+  margin-right: 1px;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.lives .life:hover{
+  transform: scale(1.2);
+}
+
+.hide-life{
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear;
+}
+
+.arrow1{
+  animation: arrow 0.75s ease-in-out infinite;
+  position: absolute;
+  right:5px;
+  top:-45px;
+  display: none;
+}
+.arrow2{
+  animation: arrow 0.75s ease-in-out infinite;
+  position: absolute;
+  right:47px;
+  top:-45px;
+  display: none;
+}
+.arrow3{
+  animation: arrow 0.75s ease-in-out infinite;
+  position: absolute;
+ right:85px;
+  top:-45px;
+  display: none;
+}
+
+.msg{
+  animation: msg 0.75s ease-in-out infinite;
+  font-family: 'Fjalla One', sans-serif;
+  text-align: center;
+  font-size: 30px;
+  color: lightskyblue;
+}
+
+.beginner-level{
+  position: absolute;
+  left: 100px;
+  top:300px;
+}
+
+.medium-level{
+position: absolute;
+  left: 100px;
+  top:370px;
+}
+
+.expert-level{
+position: absolute;
+  left: 100px;
+  top:440px;
+}
+
+.levels{
+  outline: none;
+  font-family: 'Open Sans', sans-serif;
+  background-color: lightsteelblue;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  transition: background-color 0.3s , transform 0.3s;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.levels:hover{
+cursor: pointer;
+  background-color: rgb(76, 121, 181);
+  transform:scale(1.1);
+}
+
+.levels span {
+  font-size: 35px;
+  text-align: center;
+}
+
+@keyframes msg {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes arrow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
