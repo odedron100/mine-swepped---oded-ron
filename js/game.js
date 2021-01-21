@@ -25,7 +25,6 @@ var gGame = {
 }
 
 function init() {
-  localStorage.setItem('bestScore', null);
   var bestScore = localStorage.getItem('bestScore');
   console.log('bestScore', bestScore);
   gNumberOfLife = 3;
@@ -179,8 +178,10 @@ function gameOver() {
     message.innerHTML = 'Well done! You won!';
     emojiMode.innerHTML = WIN_EMOJI;
     gCurrentEmoji = WIN_EMOJI;
-    var currScore = localStorage.getItem('bestScore')
-    if (!currScore || currScore < elapsedTime) {
+    var currScore = parseInt(localStorage.getItem('bestScore'));
+    console.log('currScore', currScore);
+    console.log('elapsedTime', elapsedTime);
+    if (!currScore || elapsedTime < currScore) {
       console.log('hi');
       localStorage.setItem('bestScore', elapsedTime);
     }
