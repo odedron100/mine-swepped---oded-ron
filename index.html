@@ -20,10 +20,22 @@
     <span class="threeLife life" onClick="lifeSafe(this)">❤️</span>
     <span  class="threeLife arrow3">👇</span>
   </div>
-  <button class="beginner-level levels" onClick="levelClicked(this)" >BEGINNER <span>👶</span></button>
-  <button class="medium-level levels" onClick="levelClicked(this)">MEDIUM <span>👦</span></button>
-  <button class="expert-level levels" onClick="levelClicked(this)">EXPERT <span>🧔</span></button>
+  <div class="hints-container">
+    <span class="hints hint1" onClick="hintsSupport(this)">💡</span>
+    <span class="hints hint2" onClick="hintsSupport(this)">💡</span>
+    <span class="hints hint3" onClick="hintsSupport(this)">💡</span>
+  </div>
+  <div class="levels- container">
+    <button class="beginner-level levels" onClick="levelClicked(4,2)" >BEGINNER <span>👶</span></button>
+    <button class="medium-level levels" onClick="levelClicked(8,12)">MEDIUM <span>👦</span></button>
+    <button class="expert-level levels" onClick="levelClicked(12,30)">EXPERT <span>🧔</span></button>
+    </div>
   <div class="msg"></div>
+  <div class="timer">0.00</div>
+  <div class="safe-container">
+    <span class="safe-counter">3 more</span>
+    <button class="safe-button" onClick="onSafeClicked()">safe</button>
+  </div>
     <table>
       <tbody class="game-board">
 
