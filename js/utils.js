@@ -44,19 +44,45 @@ function renderCell(location, value) {
 }
 
 function getRandomLocationOfMines(size, numOfMines) {
+  console.log('start');
   var minesLocations = [];
-  for (var i = 0; i < numOfMines; i++) {
+  for (var index = 0; index < numOfMines; index++) {
     var location = getLocation(size);
     var currCell = gBoard[location.i][location.j];
-    if (!currCell.isMine) {
-      currCell.isMine = true;
+    if (index === 0 && !currCell.isShown) {
       minesLocations.push(location);
-    } else {
-      getRandomLocationOfMines();
+      currCell.isMine = true;
     }
-    console.log('minesLocations', minesLocations);
+    else {
+      var isEmptyPlace = checkIfTwoMinesInSamePlace(location, minesLocations);
+      console.log('isEmptyPlace', isEmptyPlace);
+      if (isEmptyPlace && !currCell.isShown) {
+        currCell.isMine = true;
+        minesLocations.push(location);
+      } else {
+        console.log('break');
+        cleanMinesInBoard(minesLocations)
+        getRandomLocationOfMines(gLevel.SIZE, gLevel.MINES);
+        return;
+      }
+    }
   }
   return minesLocations;
+}
+
+function checkIfTwoMinesInSamePlace(location, minesArray) {
+  for (var index = 0; index < minesArray.length; index++) {
+    if ((minesArray[index].i) === location.i && (minesArray[index].j) === location.j) return false
+    return true;
+  }
+}
+
+function cleanMinesInBoard(minesLocations) {
+  for (var index = 0; index < minesLocations.length; index++) {
+    var currCell = gBoard[minesLocations[index].i][minesLocations[index].j];
+    currCell.isMine = false;
+    renderCell({ i: minesLocations[index].i, j: minesLocations[index].j }, '')
+  }
 }
 
 
@@ -100,6 +126,7 @@ function resetTimer() {
 }
 
 
+
 function timeToString(time) {
   let diffInHrs = time / 3600000;
   let hh = Math.floor(diffInHrs);
@@ -123,4 +150,12 @@ function timeToString(time) {
 
 function displayTimer(txt) {
   document.querySelector(".timer").innerHTML = txt;
+}
+
+function getCellById(id) {
+  var getCellId = id.split('cell')[1];
+  var locationI = +getCellId.split('-')[0];
+  var locationj = +getCellId.split('-')[1];
+  var cellLocation = { i: locationI, j: locationj };
+  return cellLocation;
 }

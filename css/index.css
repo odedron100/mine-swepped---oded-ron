@@ -228,6 +228,18 @@ cursor: pointer;
   background-color: rgb(144, 148, 148);
 }
 
+.record{
+  position: absolute;
+  color:white;
+  top: 165px;
+  left: 210px;
+  width: 200px;
+  height: 70px;
+  text-align: center;
+  line-height: 64px;
+  font-size: 25px;
+}
+
 @keyframes light-safe-cell {
   0% {
     transform: scale(1);
